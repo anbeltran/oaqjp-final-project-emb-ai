@@ -16,6 +16,9 @@ def emotion_detector_route():
 
     emotion_result = emotion_detector(text_to_analyze)
 
+    if emotion_result['dominant_emotion'] is None:
+        return "¡Texto inválido! ¡Por favor, inténtalo de nuevo!"
+
     anger = emotion_result['anger']
     disgust = emotion_result['disgust']
     fear = emotion_result['fear']
